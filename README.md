@@ -76,5 +76,6 @@ npx next dev --experimental-https
 
 * Make sure **Neon PostgreSQL** is set up and accessible.
 * Use `--experimental-https` if you want local HTTPS for Google OAuth testing.
+* Use locations.zip from the project root folder for testing .zip uploads
 
 ---
