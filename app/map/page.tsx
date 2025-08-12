@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 export default async function MapPageWrap() {
   const { auth } = await import("@/lib/auth/authConfig");
   const session = await auth();
-  const user = session!.user!;
+  const user = session?.user;
 
   if (!user) {
     redirect("/auth/login");
