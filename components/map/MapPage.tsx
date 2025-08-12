@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef, useMemo } from "react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -26,9 +25,9 @@ const activeMapPinIcon = L.divIcon({
   iconAnchor: [16, 32],
   popupAnchor: [0, -32],
 });
-import type { LeafletEvent, Map } from "leaflet";
+import type { Map } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { PlusCircleIcon, RefreshCcwIcon, TimerResetIcon } from "lucide-react";
+import { PlusCircleIcon, RefreshCcwIcon } from "lucide-react";
 
 type MapPageProps = {
   userId: string;
@@ -45,7 +44,6 @@ interface LocationType {
 
 
 export default function MapPage({ userId }: MapPageProps) {
-    const router = useRouter();
     const [locations, setLocations] = useState<LocationType[]>([]);
     const [loading, setLoading] = useState(true);
     const [form, setForm] = useState<{ name: string; latitude: string; longitude: string }>({ name: "", latitude: "", longitude: "" });
@@ -54,10 +52,6 @@ export default function MapPage({ userId }: MapPageProps) {
 
     useEffect(() => {
         let mounted = true;
-        if (!userId) {
-            router.replace("/auth/login");
-            return;
-        }
         setLoading(true);
         getLocationsByUser().then((locs: LocationType[]) => {
             if (mounted) {

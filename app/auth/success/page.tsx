@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 const AuthSuccessPage: React.FC = () => {
   return (
@@ -15,12 +16,12 @@ const AuthSuccessPage: React.FC = () => {
               "Didn't receive an email? To go back to the sign-in page and try again, "
             }
 
-            <a
+            <Link
               href="/api/auth/login"
               style={{ cursor: "pointer", textDecoration: "underline" }}
             >
               Click Here
-            </a>
+            </Link>
           </p>
         </div>
       </div>

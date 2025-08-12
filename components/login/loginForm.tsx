@@ -1,15 +1,12 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
+import React from "react";
 import { Button } from "../ui/button";
 import { handleGoogleSignIn } from "@/lib/auth/googleSignInServerAction";
-import { KeyRound } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import Image from "next/image";
 
 export const LoginForm: React.FC = () => {
-    const [isPending, startTransition] = useTransition();
-    const [formData, setFormData] = useState({ email: "" as string });
+
     const searchParams = useSearchParams();
     const returnUrl = searchParams.get("returnUrl");
 

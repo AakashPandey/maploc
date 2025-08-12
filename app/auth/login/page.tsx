@@ -6,7 +6,7 @@ import { LoginForm } from "@/components/login/loginForm";
 
 export default function Login(): JSX.Element {
 
-  let isAuthenticated = false;
+  const isAuthenticated = false;
   if (isAuthenticated) {
     redirect("/");
   }
