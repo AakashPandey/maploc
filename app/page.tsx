@@ -30,7 +30,7 @@ export default async function HomePage() {
               className="w-full flex items-center justify-center gap-2"
             >
               <LogOut size={18} />
-              Signout
+              Sign Out
             </Button>
           </form>
         </aside>

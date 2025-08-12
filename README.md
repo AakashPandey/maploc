@@ -2,7 +2,7 @@
 
 A location-based web app built with **Next.js**, **Tailwind CSS**, and **PostgreSQL** that lets users log in, add locations manually or by ZIP code, and view them on an interactive map.
 
-**Live Demo:** [maplocweb.vercel.app](https://maplocweb.vercel.app/)
+**Live Demo:** [maploc.vercel.app](https://maploc.vercel.app/)
 
 ---
 
