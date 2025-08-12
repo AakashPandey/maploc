@@ -189,7 +189,8 @@ export default function MapPage({ userId }: MapPageProps) {
                                     className={`cursor-pointer p-2 rounded ${selected === loc.id ? "bg-blue-100" : "hover:bg-gray-100"}`}
                                     onClick={() => handleRowClick(loc)}
                                 >
-                                    <span className="font-bold mr-2 text-sm">{idx + 1}.</span> {loc.name} ({loc.latitude}, {loc.longitude})
+                                <span className="font-bold text-sm">{idx + 1}.</span> <span className="text-xs">{loc.name} ({loc.latitude}, {loc.longitude}</span>)
+
                                 </li>
                             ))}
                         </ul>

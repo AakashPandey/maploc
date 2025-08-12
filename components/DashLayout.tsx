@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Home, Map, UploadIcon, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
+import { handleSignOut } from "@/lib/auth/signOutServerAction";
 
 interface DashboardLayoutProps {
   title: string;
@@ -47,7 +48,7 @@ export default function DashboardLayout({ title, children }: DashboardLayoutProp
         </div>
 
         <div className="mt-auto p-4">
-          <form action="/auth/logout" method="post">
+          <form action={handleSignOut}>
             <Button
               type="submit"
               variant="outline"
